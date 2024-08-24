@@ -18,7 +18,7 @@ const App = () => {
         <div className='app-container'>
         <div className="App">
             <Routes location={location} >
-              <Route path="/home" element={<HomePage />}/>
+              <Route path="/" element={<HomePage />}/>
               <Route path="/destinationchosen" element={<DestinationChosen />}/>
               <Route path="/attractions" element={<Attractions />}/>
               <Route path="/weather" element={<WeatherTrends />}/>

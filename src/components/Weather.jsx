@@ -35,7 +35,7 @@ function WeatherTrends() {
 
       <nav className="navigation-container" aria-label="Main navigation">
         <div className="navigation-links">
-          <Link to="/home" role="link">Home</Link>
+          <Link to="/" role="link">Home</Link>
           <Link to="/destinationchosen" role="link">Destination</Link>
           <Link to="/attractions" role="link">Attractions</Link>
         </div>

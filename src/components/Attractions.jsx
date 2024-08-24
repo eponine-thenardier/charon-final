@@ -46,7 +46,7 @@ function Attractions() {
 
       <nav className="navigation-container" aria-label="attractions navigation">
         <div className="navigation-links">
-          <Link to="/home" role="link">Home</Link>
+          <Link to="/" role="link">Home</Link>
           <Link to="/destinationchosen" role="link">Destination</Link>
           <Link to="/weather" role="link">Weather</Link>
         </div>

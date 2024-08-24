@@ -18,7 +18,7 @@ const DestinationChosen = () => {
       </nav>
       <p>Return from where you came</p>
       <nav aria-label="Return navigation">
-        <Link to="/home" role="link">Home</Link>
+        <Link to="/" role="link">Home</Link>
       </nav>
     </div>
   );
