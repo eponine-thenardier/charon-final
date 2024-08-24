@@ -6,22 +6,23 @@ const DestinationChosen = () => {
   const { city, dates } = useContext(TravelContext);
   
   return (
-    <div className="destination-container">
-      <h2>You have chosen {city}</h2>
+    <div className="destination-container" role="main" aria-labelledby="destination-heading">
+      <h2 id="destination-heading">You have chosen {city || 'No city selected'}</h2>
       <p>
         Dates: {dates.length > 0 ? `${dates[0].toLocaleDateString()} to ${dates[1].toLocaleDateString()}` : 'No dates selected'}
       </p>
       <p>What would you like to explore?</p>
-      <div className="options">
-        <Link to="/attractions">Attractions</Link>
-        <Link to="/weather">Weather</Link>
-      </div>
+      <nav className="options" aria-label="Explore options">
+        <Link to="/attractions" role="link">Attractions</Link>
+        <Link to="/weather" role="link">Weather</Link>
+      </nav>
       <p>Return from where you came</p>
-      <div>
-        <Link to="/home">Home</Link>
-      </div>
+      <nav aria-label="Return navigation">
+        <Link to="/home" role="link">Home</Link>
+      </nav>
     </div>
-  )
+  );
 }
 
 export default DestinationChosen;
+

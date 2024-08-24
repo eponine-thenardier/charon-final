@@ -10,34 +10,36 @@ function WeatherTrends() {
 
   useEffect(() => {
     if (city && dates.length === 2) {
-      setLoading(true)
+      setLoading(true);
       const getWeatherTrends = async () => {
-        const result = await fetchWeatherTrends(city, dates)
+        const result = await fetchWeatherTrends(city, dates);
         if (result) {
-          setWeather(result)
+          setWeather(result);
         } else {
-          setError('Unable to fetch weather trends.')
+          setError('Unable to fetch weather trends.');
         }
-        setLoading(false)
-      }
-      getWeatherTrends()
+        setLoading(false);
+      };
+      getWeatherTrends();
     } else {
       setError('Please select a city and valid dates.')
     }
-  }, [city, dates]);
+  }, [city, dates, setWeather])
 
   return (
-    <div className='weather-container'>
-      <h2>Weather Trends in {city}</h2>
-      {loading && <div className="loading">Loading weather trends...</div>}
-      {error && <div className="error-message">{error}</div>}
-      {!loading && !error && <div className="weather-details">{weather}</div>}
+    <div className='weather-container' role="main" aria-labelledby="weather-heading">
+      <h2 id="weather-heading">Weather Trends in {city || 'Unknown City'}</h2>
+      {loading && <div className="loading" role="status" aria-live="polite">Loading weather trends...</div>}
+      {error && <div className="error-message" role="alert">{error}</div>}
+      {!loading && !error && <div className="weather-details" aria-live="polite">{weather}</div>}
 
-      <div className="navigation-links">
-        <Link to="/home">Home</Link>
-        <Link to="/destinationchosen">Destination</Link>
-        <Link to="/attractions">Attractions</Link>
-      </div>
+      <nav className="navigation-container" aria-label="Main navigation">
+        <div className="navigation-links">
+          <Link to="/home" role="link">Home</Link>
+          <Link to="/destinationchosen" role="link">Destination</Link>
+          <Link to="/attractions" role="link">Attractions</Link>
+        </div>
+      </nav>
     </div>
   );
 }

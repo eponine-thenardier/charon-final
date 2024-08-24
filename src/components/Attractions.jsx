@@ -11,30 +11,31 @@ function Attractions() {
 
   useEffect(() => {
     if (city) {
-      setLoading(true)
+      setLoading(true);
       const getAttractions = async () => {
         const result = await fetchAttractions(city);
         if (result) {
-          const parsedAttractions = result.split('\n').filter(item => item.trim() !== '')
-          setAttractions(result)
-          setAttractionList(parsedAttractions)
+          const parsedAttractions = result.split('\n').filter(item => item.trim() !== '');
+          setAttractions(result);
+          setAttractionList(parsedAttractions);
         } else {
-          setError('Unable to fetch attractions.')
+          setError('Unable to fetch attractions.');
         }
-        setLoading(false)
+        setLoading(false);
       };
-      getAttractions()
+      getAttractions();
     } else {
-      setError('No city selected.')
+      setError('No city selected.');
     }
-  }, [city, setAttractions])
+  }, [city, setAttractions]);
 
   return (
-    <div className='container'>
-      {loading && <div className="message">Loading attractions...</div>}
-      {error && <div className="error-message">{error}</div>}
+    <div className='container' role="main" aria-labelledby="attractions-heading">
+      <h1 id="attractions-heading">Attractions</h1>
+      {loading && <div className="message" role="status" aria-live="polite">Loading attractions...</div>}
+      {error && <div className="error-message" role="alert">{error}</div>}
       {!loading && !error && (
-        <ul>
+        <ul aria-live="polite">
           {attractionList.map((attraction, index) => (
             <li key={index} className="attraction-item">
               {attraction}
@@ -43,16 +44,17 @@ function Attractions() {
         </ul>
       )}
 
-      <div className="navigation-container">
+      <nav className="navigation-container" aria-label="attractions navigation">
         <div className="navigation-links">
-          <Link to="/home">Home</Link>
-          <Link to="/destinationchosen">Destination</Link>
-          <Link to="/weather">Weather</Link>
+          <Link to="/home" role="link">Home</Link>
+          <Link to="/destinationchosen" role="link">Destination</Link>
+          <Link to="/weather" role="link">Weather</Link>
         </div>
-      </div>
+      </nav>
     </div>
-  )
+  );
 }
 
 export default Attractions;
+
 
