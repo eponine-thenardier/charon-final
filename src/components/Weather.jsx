@@ -28,6 +28,7 @@ function WeatherTrends() {
 
   return (
     <div className='weather-container' role="main" aria-labelledby="weather-heading">
+      
       <h2 id="weather-heading">Weather Trends in {city || 'Unknown City'}</h2>
       {loading && <div className="loading" role="status" aria-live="polite">Loading weather trends...</div>}
       {error && <div className="error-message" role="alert">{error}</div>}

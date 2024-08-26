@@ -28,7 +28,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="home-container" role="main" aria-labelledby="welcome-heading">
+    <div className="home-container" aria-labelledby="welcome-heading">
       <div className="fog" aria-hidden="true">
         <div className="fog-layer fog-layer-1"></div>
         <div className="fog-layer fog-layer-2"></div>
