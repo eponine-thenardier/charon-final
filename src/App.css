@@ -360,7 +360,7 @@ ul {
   border-bottom: none; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   h1 {
     font-size: 2.5em;
   }
@@ -371,13 +371,25 @@ ul {
 
   .container {
     max-width: 90%;
-    padding-top: 50px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .weather-container {
+    max-width: 90%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
   }
 
   .round-button {
     width: 60px;
     height: 60px;
     font-size: 1.2em;
+  }
+  .app-container {
+    max-width: 90%;
+    padding-top: 50px;
   }
 }
 
