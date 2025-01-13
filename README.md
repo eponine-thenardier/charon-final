@@ -1,5 +1,7 @@
 # Charon
 
+Watch the demo [here](https://youtu.be/fq1fW19cW8Q).
+
 Charon is a travel planning web application that combines weather forecasts and personalized attraction recommendations to help users plan their vacations efficiently. Developed using React (JavaScript), HTML, CSS, and the OpenAI API, Charon is designed to be an intelligent and user-friendly travel assistant.
 
 
